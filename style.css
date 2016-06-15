@@ -1,0 +1,501 @@
+/** * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/) * http://cssreset.com */
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,p,pre,q,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;outline:0;font:inherit;vertical-align:baseline}
+/* HTML5 display-role reset for older browsers */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+/* box-sizing to most items */
+body,header,main,footer,div,article,aside,details,figcaption,figure,hgroup,menu,nav,input,textarea,select,a,p,ul,ol,li,span{box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+/* end reset */
+
+html,
+body {
+    font: 16px/20px "Cabin",sans-serif;
+    height: 100%;
+}
+#mainWrapper {
+    min-height: 100%;
+    position: center center fixed;
+    background-image: url('img/MotoRide2.jpg');
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+#content {
+    /*width: 80%;*/
+    /*right: 0;
+    left: 0;*/
+    /*padding-bottom: 60px;
+    max-width: 1200px;
+    height: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    background-color: #fff;*/
+}
+
+
+
+
+
+
+
+
+
+
+/*header content*/
+.headSpace {
+    width: 100%;
+    height: 20px;
+}
+.headerContainer {
+    width: 100%;
+    height: 88px;
+    background: rgba(0, 0, 0, .5);
+}
+    .headerContainer ul {
+        float: right;
+        margin-top: -25px;
+    }
+        .headerContainer li {
+            font: bold 17px/23px "Cabin",sans-serif;
+            margin: -5px 30px 0px 0px;
+        }
+            .headerContainer a {
+                color: white;
+                text-decoration: none;
+                -webkit-transition: 0.15s ease-in-out;
+                -moz-transition: 0.15s ease-in-out;
+                -o-transition: 0.15s ease-in-out;
+                -ms-transition: 0.15s ease-in-out;
+                transition: 0.15s ease-in-out;
+            }
+            .headerContainer a:hover {
+                color: #dfa83a;
+            }
+
+.headerTitle {
+    font: bold 18px/36px "Bad Script", cursive;
+    color: white;
+    margin-left: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+/*All Views*/
+.viewTopper {
+    width: 100%;
+    height: 90px;
+    font: bold 40px/60px "Cabin",sans-serif;
+    padding-left: 60px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #0644fb;
+    text-align: left;
+}
+
+
+
+
+
+
+
+
+
+
+/*Home page content*/
+.mainBlurb {
+    width: 100%;
+    margin-top: 68px;
+    font: bold 20px/30px "Cabin",sans-serif;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 1);
+}
+    .mainBlurb span {
+        font-size: 36px;
+    }
+
+.wwQuote {
+    position: fixed;
+    bottom: 20%;
+    right: 3%;
+    display: inline-block;
+    width: 100%;
+    margin-top: 80px;
+    text-align: right;;
+    color: white;
+    font: bold 20px/30px "Cabin",sans-serif;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 1);
+}
+    .wwQuote strong {
+        font: bold 28px/46px "Bad Script", cursive;
+        color: #dfa83a;
+    }
+    .wwQuote span {
+        text-align: right;
+        font: bold italic 16px/30px "Cabin",sans-serif;
+    }
+
+
+
+
+
+
+
+
+
+
+/*Work Page*/
+.workWrapper {
+    position: fixed;
+    top: 108px;
+    bottom: 60px;
+    left: 10%;
+    right: 10%;
+    margin: 0 auto;
+    overflow: auto;
+    background-color: rgba(255, 255, 255, .8);
+}
+.workBlurb {
+    display: inline-block;
+    width: 300px;
+    padding-left: 60px;
+    margin-right: 80px;
+    vertical-align: top;
+    }
+    .workBlurb  h3 {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+    .workBlurb  h4 {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+    .workBlurb  p {
+        margin-bottom: 12px;
+    }
+.projectWindow {
+    display: inline-block;
+    width: 60%;
+    border: 8px solid grey;
+    margin-bottom: 80px;
+}
+    .projectWindow img {
+        width: 100%;
+    }
+
+
+
+
+
+
+
+
+
+
+/*About Page*/
+.aboutWrapper {
+    position: fixed;
+    top: 108px;
+    bottom: 60px;
+    left: 10%;
+    right: 10%;
+    margin: 0 auto;
+    overflow: auto;
+    background-color: rgba(255, 255, 255, .8);
+    text-align: center;
+}
+
+.aboutSidebar {
+    width: 300px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    float: left;
+}
+.personalBlurb {
+    width: 300px;
+    padding-left: 60px;
+    margin-bottom: 20px;
+}
+    .personalBlurb p:nth-child(1) {
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 20px;
+    }
+
+.interests {
+    display: inline-block;
+    width: 600px;
+    /*margin-left: 60px;*/
+    text-align: left;
+}
+    .intIcon {
+        width: 120px;
+        height: 120px;
+        margin: 36px;
+        vertical-align: top;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        display: inline-block;
+    }
+    .intIcon img {
+        width: 100%;
+        height: auto;
+    }
+    .intIcon div p:nth-child(1) {
+        font-size: 18px;
+        font-weight: bold;
+    }
+.skillsTitle {
+    font: 30px/40px "VT323";
+    padding-left: 60px;
+    margin-bottom: 12px;
+}
+.skillsContainer {
+    width: 250px;
+    padding-left: 60px;
+    margin-bottom: 60px;
+}
+    .skillsImages {
+        width: 33.33%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        display: inline-block;
+    }
+        .skillsImages img {
+            width: 100%;
+            height: auto;
+        }
+
+
+
+
+
+
+
+
+
+
+/*Contact Page*/
+.contactWrapper {
+    position: fixed;
+    top: 108px;
+    bottom: 60px;
+    left: 10%;
+    right: 10%;
+    margin: 0 auto;
+    overflow: auto;
+    background-color: rgba(255, 255, 255, .8);
+}
+
+.linksContainer {
+    width: 100%;
+    margin: 24px auto;
+    text-align: center;
+}
+.linkEmail {
+    width: 80px;
+    height: 80px;
+    margin: 0 6px;
+    background-image: url('img/email.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+    -webkit-transition: 0.15s ease-in-out;
+    -moz-transition: 0.15s ease-in-out;
+    -o-transition: 0.15s ease-in-out;
+    -ms-transition: 0.15s ease-in-out;
+    transition: 0.15s ease-in-out;
+}
+    .linkEmail:hover {
+        width: 80px;
+        height: 80px;
+        background-image: url('img/emailBlue.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        display: inline-block;
+    }
+.linkFacebook {
+    width: 80px;
+    height: 80px;
+    margin: 0 6px;
+    background-image: url('img/fbIcon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+    -webkit-transition: 0.15s ease-in-out;
+    -moz-transition: 0.15s ease-in-out;
+    -o-transition: 0.15s ease-in-out;
+    -ms-transition: 0.15s ease-in-out;
+    transition: 0.15s ease-in-out;
+}
+    .linkFacebook:hover {
+        width: 80px;
+        height: 80px;
+        background-image: url('img/fbIconBlue.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        display: inline-block;
+    }
+.linkLinkedIn {
+    width: 80px;
+    height: 80px;
+    margin: 0 6px;
+    background-image: url('img/liIcon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+    -webkit-transition: 0.15s ease-in-out;
+    -moz-transition: 0.15s ease-in-out;
+    -o-transition: 0.15s ease-in-out;
+    -ms-transition: 0.15s ease-in-out;
+    transition: 0.15s ease-in-out;
+}
+    .linkLinkedIn:hover {
+        width: 80px;
+        height: 80px;
+        background-image: url('img/liIconBlue.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        display: inline-block;
+    }
+.linkSlack {
+    width: 80px;
+    height: 80px;
+    margin: 0 6px;
+    background-image: url('img/slIcon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+    -webkit-transition: 0.15s ease-in-out;
+    -moz-transition: 0.15s ease-in-out;
+    -o-transition: 0.15s ease-in-out;
+    -ms-transition: 0.15s ease-in-out;
+    transition: 0.15s ease-in-out;
+}
+    .linkSlack:hover {
+        width: 80px;
+        height: 80px;
+        background-image: url('img/slIconBlue.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        display: inline-block;
+    }
+.linkGithub {
+    width: 80px;
+    height: 80px;
+    margin: 0 6px;
+    background-image: url('img/gitIcon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+    -webkit-transition: 0.15s ease-in-out;
+    -moz-transition: 0.15s ease-in-out;
+    -o-transition: 0.15s ease-in-out;
+    -ms-transition: 0.15s ease-in-out;
+    transition: 0.15s ease-in-out;
+}
+    .linkGithub:hover {
+        width: 80px;
+        height: 80px;
+        background-image: url('img/gitIconBlue.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        display: inline-block;
+    }
+.form {
+    display: block;
+    width: 450px;
+    margin: 0 auto;
+}
+.form p {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 12px auto;
+}
+.form input{
+    display: block;
+    font: 16px "Cabin",sans-serif;
+    padding: 9px 12px;
+    border: none;
+    background-color: #eeeeee;
+    color: #222222;
+    width: 100%;
+    margin-bottom: 12px;
+}
+.form textarea {
+    display: block;
+    font: 16px "Cabin",sans-serif;
+    padding: 9px 12px;
+    border: none;
+    background-color: #eeeeee;
+    color: #222222;
+    width: 450px;
+    height: 120px;
+    margin-bottom: 12px;
+}
+#submitButton {
+    width: 100px;
+    height: 36px;
+    font: 16px "Cabin",sans-serif;
+    font-weight: bold;
+    color: #fff;
+    background-color: #0644fb;
+    border-radius: 5px;
+}
+.thanks {
+    width: 100%;
+    text-align: center;
+    font-size: 42px;
+    margin-top: 60px;
+}
+
+
+
+
+
+
+
+
+
+
+/*Footer content*/
+#footer {
+    width: 100%;
+	height: 60px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+    font: 15px/20px "Cabin",sans-serif;
+    text-align: center;
+    color: #e2e2e2;
+    background: rgba(0, 0, 0, .5);
+    padding: 8px;
+}

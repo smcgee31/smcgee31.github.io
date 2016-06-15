@@ -1,0 +1,24 @@
+<div class="contentWrapper">
+    <div class="viewTopper">
+        contact
+    </div>
+    <div class="linksContainer">
+        <div class="linkEmail" ng-click="toggle()"></div>
+        <a href="https://www.facebook.com/steve.mcgee.507?pnref=lhc.friends" target="_blank"><div class="linkFacebook"></div></a>
+        <a href="https://www.linkedin.com/in/steve-mcgee-48325047" target="_blank"><div class="linkLinkedIn"></div></a>
+        <a href="https://slack.com/" target="_blank"><div class="linkSlack"></div></a>
+        <a href="https://github.com/smcgee31/" target="_blank"><div class="linkGithub"></div></a>
+    </div>
+    <div class="form" ng-show="visible">
+        <p>Drop me a line...</p>
+        <form action="https://formspree.io/solodesign31@gmail.com" method="post">
+            <input type="text" name="_replyto" placeholder="Your email address..." required="true">
+            <input type="text" name="_subject" placeholder="Subject..." required="true">
+            <textarea type="text" name="message" placeholder="Your message..." required="true"></textarea>
+            <input type="text" name="_gotcha" style="display:none" />
+            <input id="submitButton" type="submit" value="Send" ng-click="thanks()"></button>
+            <input type="hidden" name="_next" value="https://smcgee31.github.io/#/contact/Personal_Portfolio/#/contact" />
+        </form>
+    </div>
+    <thanks-dir ng-hide="thanks"></thanks-dir>
+</div>

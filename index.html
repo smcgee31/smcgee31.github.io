@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Steve McGee | a MEAN guy</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="public/styles/reset.css">
+        <link rel="stylesheet" type="text/css" href="public/styles/fullWidth.css">
+        <link rel="stylesheet" type="text/css" href="public/styles/max-width600.css">
+        <link rel="stylesheet" type="text/css" href="public/styles/max-width480.css">
+        <link href='https://fonts.googleapis.com/css?family=VT323|Cabin:400,700|Bad+Script' rel='stylesheet' type='text/css'>
+    </head>
+    <body ng-app='app'>
+        <!-- Header / navbar          -->
+        <div id="mainWrapper" ng-hide="email">
+            <!-- header directive -->
+            <header-dir></header-dir>
+            <div id="content">
+                <!-- each ui-view shows here ... whole-page views-->
+                <ui-view></ui-view>
+            </div>
+            <div id="footer">
+                <!-- footer directive -->
+                <footer-dir></footer-dir>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+        <script src="app.js"></script>
+        <script src="public/about/aboutCtrl.js"></script>
+        <script src="public/about/aboutSvc.js"></script>
+        <script src="public/about/interestsDir.js"></script>
+        <script src="public/home/homeCtrl.js"></script>
+        <script src="public/contact/contactCtrl.js"></script>
+        <script src="public/contact/thanksDir.js"></script>
+        <script src="public/work/workCtrl.js"></script>
+        <script src="public/work/workSvc.js"></script>
+        <script src="public/footer/footerDir.js"></script>
+        <script src="public/header/headerDir.js"></script>
+
+    </body>
+</html>

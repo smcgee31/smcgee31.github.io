@@ -1,0 +1,42 @@
+<header>
+    <div class="headSpace">
+
+    </div>
+    <div class="headerContainer">
+        <div class="headerTitle">
+            A Personal Portfolio Site
+        </div>
+
+
+        <ul>
+            <div class="navLink">
+                <li><a ui-sref="home">home</a></li>
+            </div>
+            <div class="navLink">
+                <li><a ui-sref="work">work</a></li>
+            </div>
+            <div class="navLink">
+                <li><a ui-sref="about">about</a></li>
+            </div>
+            <div class="navLink">
+                <li><a ui-sref="contact">contact</a></li>
+            </div>
+        </ul>
+
+
+    </div>
+
+    <div class="form" ng-show="email">
+        <p>Drop me a line...</p>
+        <form action="https://formspree.io/solodesign31@gmail.com" method="post">
+            <input type="text" name="_replyto" placeholder="Your email address..." required="true">
+            <input type="text" name="_subject" placeholder="Subject..." required="true">
+            <textarea type="text" name="message" placeholder="Your message..." required="true"></textarea>
+            <input type="text" name="_gotcha" style="display:none" />
+            <input id="submitButton" type="submit" value="Send" ng-click="thanks()"></button>
+            <input type="hidden" name="_next" value="http://127.0.0.1:3000/Personal_Portfolio/#/contact" />
+        </form>
+    </div>
+
+
+</header>
