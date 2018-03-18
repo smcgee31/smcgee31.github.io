@@ -1,8 +1,0 @@
-
-1. You need two bash windows
-	a. First window is initiated from the root directory. Run: babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
-	b. Second window is initiated from the /public directory. Run: live-server
-
-2. When that is done a Chrome window opens to 127.0.0.1:8080 and your Indecision App is on screen and any changes you make will live reload.
-
-3. Lifecycle methods are not available in stateless functional components. If you need them you have to use a class based component.
