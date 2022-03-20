@@ -1,22 +1,286 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Indecision App</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      background-color: black;
+      box-sizing: border-box;
+      margin-top: 100px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 14px;
+    }
+
+    .form_container {
+      display: block;
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #f7f7f7;
+      border-radius: 5px;
+      padding: 20px;
+    }
+
+    .form_elements {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .input_field {
+      width: 90%;
+      padding: 10px;
+      /* border: 1px solid #ccc; */
+      border-radius: 5px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    input {
+      width: 95%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    textarea {
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      width: 95%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    button {
+      width: 90%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      background-color: rgb(50, 50, 248);
+      color: white;
+      cursor: pointer;
+    }
+
+    .thankyou {
+      display: none;
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #f7f7f7;
+      border-radius: 5px;
+      padding: 20px;
+    }
+
+    .thankyou_message {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .email_invalid {
+      display: none;
+      color: red;
+      font-size: 11px;
+    }
+  </style>
+
+  <title>Steve's Email Challenge</title>
+
 </head>
+
 <body>
-  <div id="app"></div>
-  <script src="https://unpkg.com/react@16.0.0/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.development.js"></script>
-  <script src="/scripts/app.js"></script>
+  <div class="form_container">
+    <form class="gform" method="post" data-email=""
+      action='https://script.google.com/macros/s/AKfycbzBr4g4h-8StpPu2svyPxnqIrtAqIFYWD5mnHHEsLl95C6sQ_H0Vbnbh1mvg81ygsHnsg/exec'>
+      `````
 
-  
+      <div class="form_elements">
+        <div class="input_field">
+          <label for="email">Email</label>
+          <input type="text" name="email" placeholder="To..." required>
+          <span class="email_invalid" style="display: none; color: red; font-size: 11px;">
+            Must be a valid email address</span>
+        </div>
+        <div class="input_field">
+          <label for="subject">Subject</label>
+          <input type="text" name="subject">
+        </div>
+        <div class="input_field">
+          <label for="message">Message</label>
+          <textarea class="message" rows="10" name="message" onkeypress="ta()"></textarea>
+        </div>
+        <div>
+          <input id="spamstopper" type="hidden" name="spamstopper" value="" />
+        </div>
+        <button class="button">
+          Send
+        </button>
+      </div>
 
+    </form>
+  </div>
 
+  <div class="thankyou">
+    <div class="thankyou_message">
+      <h2><em>Thanks!</em> Now run along young Padawan.</h2>
+      <h2>And may the Cage be with you!</h2>
+    </div>
+  </div>
 
+  <script data-cfasync="false" type="text/javascript">
+    (function() {
+      function validEmail(email) {
+        const re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+        return re.test(email);
+      }
 
+      function validateHuman(spamstopper) {
+        if (spamstopper) {
+          // if hidden input gets data
+          console.log("Bot Detected!");
+          return true;
+        } else {
+          console.log("Welcome Human!");
+        }
+      }
+
+      // get all data in form and return object
+      function getFormData(form) {
+        const elements = form.elements;
+
+        const fields = Object.keys(elements).filter(function(k) {
+          return (elements[ k ].name !== "spamstopper");
+        }).map(function(k) {
+          if (elements[ k ].name !== undefined) {
+            return elements[ k ].name;
+            // special case for Edge's html collection
+          } else if (elements[ k ].length > 0) {
+            return elements[ k ].item(0).name;
+          }
+        }).filter(function(item, pos, self) {
+          return self.indexOf(item) == pos && item;
+        });
+
+        const formData = {};
+        fields.forEach(function(name) {
+          const element = elements[ name ];
+
+          // singular form elements just have one value
+          formData[ name ] = element.value;
+
+          // when our element has multiple items, get their values
+          if (element.length) {
+            const data = [];
+            for (let i = 0; i < element.length; i++) {
+              const item = element.item(i);
+              if (item.checked || item.selected) {
+                data.push(item.value);
+              }
+            }
+            formData[ name ] = data.join(', ');
+          }
+        });
+
+        // add form-specific values into the data
+        formData.formDataNameOrder = JSON.stringify(fields);
+        formData.formGoogleSheetName = "responses"; // default sheet name
+        formData.formGoogleSendEmail = form.elements.email.value; // no email by default
+        formData.formGoogleSubject = form.elements.subject.value; // no subject by default
+
+        // console.log(formData);
+        return formData;
+      }
+
+      function handleFormSubmit(event) {
+        event.preventDefault();
+        const form = event.target;
+        const data = getFormData(form);
+
+        if (validateHuman(data.spamstopper)) {
+          return false;
+        }
+
+        if (data.email && !validEmail(data.email)) {
+          const invalidEmail = form.querySelector(".email_invalid");
+          if (invalidEmail) {
+            invalidEmail.style.display = "block";
+            return false;
+          }
+        } else {
+          disableAllButtons(form);
+          const url = form.action;
+          const xhr = new XMLHttpRequest();
+          xhr.open('POST', url);
+          // xhr.withCredentials = true;
+          xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+          xhr.onreadystatechange = function() {
+            if (xhr.status > 199 && xhr.status < 300) {
+              console.log("Success!");
+            } else {
+              console.log("Error!");
+              console.log(xhr.status, xhr.statusText);
+              console.log(xhr.responseText);
+            }
+            const formContainer = document.querySelector(".form_container")
+            if (formContainer) {
+              formContainer.style.display = "none"; // hide form
+            }
+            const thankYouMessage = document.querySelector(".thankyou");
+            if (thankYouMessage) {
+              thankYouMessage.style.display = "block";
+              setTimeout(() => {
+                window.location.replace("https://i.pinimg.com/originals/6d/b1/56/6db15621fcb614ef3621f86e5a974433.jpg")
+              }, 2000);
+            }
+            return;
+          };
+          // url encode form data for sending as post data
+          const encoded = Object.keys(data).map(function(k) {
+            return encodeURIComponent(k) + "=" + encodeURIComponent(data[ k ]);
+          }).join('&');
+          xhr.send(encoded);
+        }
+      }
+
+      function loaded() {
+        console.log("Contact form submission handler loaded successfully.");
+        // bind to the submit event of our form
+        const forms = document.querySelectorAll("form.gform");
+        for (let i = 0; i < forms.length; i++) {
+          forms[ i ].addEventListener("submit", handleFormSubmit, false);
+        }
+      };
+
+      document.addEventListener("DOMContentLoaded", loaded, false);
+
+      function disableAllButtons(form) {
+        const buttons = form.querySelectorAll("button");
+        for (let i = 0; i < buttons.length; i++) {
+          buttons[ i ].disabled = true;
+        }
+      }
+    })();
+  </script>
+  <script>
+    function ta() {
+      const messageText = document.querySelector(".message");
+      const sendButton = document.querySelector(".button");
+      const randomColor = Math.floor(Math.random() * 2 ** 24).toString(16).padStart(6, "0");
+      if (messageText.value.length > 0) {
+        sendButton.style.backgroundColor = "#" + randomColor;
+      }
+    }
+  </script>
 </body>
+
 </html>
